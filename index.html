@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Như Ý - Kiến Trúc & Xây Dựng</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="top-contact">
+    📧 Email: <strong>nhuylu.xd@gmail.com</strong> | ☎️ <strong>0888099945</strong>
+  </div>
+  <header>
+    <h1>Xin chào, tôi là Như Ý</h1>
+    <p class="cta">Kiến trúc sư - Kỹ sư xây dựng đồng hành cùng bạn xây dựng tổ ấm.</p>
+    <a href="#contact" class="btn-cta">Liên hệ ngay</a>
+  </header>
+  <section id="about">
+    <h2>Về tôi</h2>
+    <p>Với nhiều năm kinh nghiệm trong lĩnh vực kiến trúc và xây dựng, tôi đã tham gia thiết kế và thi công hàng chục công trình lớn nhỏ tại Trà Vinh và khu vực ĐBSCL.</p>
+  </section>
+  <section id="projects">
+    <h2>Dự án tiêu biểu</h2>
+    <div class="gallery">
+      <img src="images/2.jpg" alt="Phòng khách gỗ" />
+      <img src="images/4.jpg" alt="Phòng khách gỗ" />
+      <p>Phòng khách bằng gỗ hiện đại - Trà Cú, Trà Vinh</p>
+      <img src="images/7.jpg" alt="" />
+      <img src="images/8.jpg" alt="Phòng khách PVC" />
+      <p>Phòng khách PVC vân đá - Trà Cú, Trà Vinh</p>
+    </div>
+  </section>
+  <section id="feedback">
+    <h2>Góp ý từ khách hàng</h2>
+    <form action="https://formspree.io/f/xanbooaw" method="POST">
+      <input type="text" name="name" placeholder="Tên của bạn" required />
+      <input type="email" name="email" placeholder="Email của bạn" required />
+      <textarea name="message" placeholder="Góp ý..." required></textarea>
+      <button type="submit">Gửi góp ý</button>
+    </form>
+  </section>
+  <footer id="contact">
+    <p>Liên hệ: nhuylu.xd@gmail.com | 0888099945</p>
+  </footer>
+
+  <script>
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = 0;
+    modal.style.left = 0;
+    modal.style.width = '50%';
+    modal.style.height = '50%';
+    modal.style.background = 'rgba(0,0,0,0.8)';
+    modal.style.display = 'none';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.zIndex = 1000;
+    modal.innerHTML = '<img id="modal-img" style="max-width:40%; max-height:40%; border-radius:12px;" />';
+    document.body.appendChild(modal);
+
+    modal.onclick = () => modal.style.display = 'none';
+
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        document.getElementById('modal-img').src = img.src;
+        modal.style.display = 'flex';
+      });
+    });
+  </script>
+</body>
+</html>
